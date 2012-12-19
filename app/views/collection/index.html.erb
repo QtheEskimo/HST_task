@@ -1,1 +1,21 @@
-<%= "hello the WOrld" %>
+<%= "HST Task" %>
+
+
+<table>
+	<tr>
+		<% @collections.each do |collection| %>
+		<th> <%= collection.name %> </th>
+		<% end %>
+	</tr>
+	<tr>
+		<% @collections.each do |collection| %>
+		<td>
+			<ul>
+				<% collection.items.each do |item| %>
+					<li><%= item.name %></li>
+				<% end %>
+			</ul>
+		</td>
+		<% end %>
+	</tr>
+<table>

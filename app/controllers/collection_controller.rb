@@ -2,6 +2,9 @@ class CollectionController < ApplicationController
 
   def index
 
+    @collections = Collection.order(:position)
+    
+
   end
 
   def new

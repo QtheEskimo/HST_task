@@ -8,5 +8,5 @@ class CollectionController < ApplicationController
 
   end
     
-  end
+ 
 end

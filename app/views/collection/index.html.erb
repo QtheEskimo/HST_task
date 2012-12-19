@@ -1,6 +1,7 @@
-<%= "HST Task" %>
 
-
+<center>
+	<h2>HST Task</h2>
+<div class="outer_div">
 <table>
 	<tr>
 		<% @collections.each do |collection| %>
@@ -10,12 +11,14 @@
 	<tr>
 		<% @collections.each do |collection| %>
 		<td>
-			<ul>
+			<ul id="list_<%= collection.id %>" class="sort_list">
 				<% collection.items.each do |item| %>
-					<li><%= item.name %></li>
+					<li class="list_items" id="item_<%= item.id %>"><%= item.name %></li>
 				<% end %>
 			</ul>
 		</td>
 		<% end %>
 	</tr>
 <table>
+</div>
+</center>

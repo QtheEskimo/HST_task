@@ -8,7 +8,9 @@ class CollectionController < ApplicationController
   end
 
   def new
-
+    Collection.delete_all
+    Item.delete_all
+    
     collection1 = Collection.create(name: 'Collection 1', position: 1)
 
       item1 = Item.create(name: Item.random_name, position: 1, collection: collection1)

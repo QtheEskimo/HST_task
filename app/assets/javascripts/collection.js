@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	$('ul.sort_list').sortable({
 
+		connectWith: "ul.sort_list",
 		update: function(e,u){
 
 		 item_id = $(u.item).attr('id')

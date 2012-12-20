@@ -38,16 +38,18 @@ class CollectionController < ApplicationController
 
   def sort
 
-    @collection = Collection.find(params['collection'])
-    @collection.items.each do |item|
-      item.position = params['item'].index(item.id.to_s) + 1
-      
-      item.save
+    items = Item.order(:position)
+    items.each do |item|
+      if params['item'].include? item.id.to_s
+        item.position = params['item'].index(item.id.to_s) + 1
+        item.collection_id = params['collection']
+        item.save
+      end
     end
-    @collection.save
-    render :nothing => true
-
+     render :nothing => true
   end
+
+  
     
   
 

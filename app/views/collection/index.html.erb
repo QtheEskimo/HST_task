@@ -11,8 +11,8 @@
 	<tr>
 		<% @collections.each do |collection| %>
 		<td>
-			<ul id="list_<%= collection.id %>" class="sort_list">
-				<% collection.items.each do |item| %>
+			<ul id="<%= collection.id %>" class="sort_list">
+				<% collection.items.order(:position).each do |item| %>
 					<li class="list_items" id="item_<%= item.id %>"><%= item.name %></li>
 				<% end %>
 			</ul>

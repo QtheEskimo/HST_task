@@ -35,6 +35,19 @@ class CollectionController < ApplicationController
       item5 = Item.create(name: Item.random_name, position: 5, collection: collection3)
 
   end
+
+  def sort
+
+    @collection = Collection.find(params['collection'])
+    @collection.items.each do |item|
+      item.position = params['item'].index(item.id.to_s) + 1
+      
+      item.save
+    end
+    @collection.save
+    render :nothing => true
+
+  end
     
   
 
